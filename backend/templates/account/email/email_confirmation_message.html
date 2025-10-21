@@ -1,0 +1,133 @@
+{% load account %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{{ subject }}</title>
+  <style>
+    /* Base reset */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 40px 32px;
+      background-color: #ffffff;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .logo img {
+      max-width: 140px;
+      height: auto;
+    }
+
+    h1 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 28px;
+      color: #000;
+      text-align: center;
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 17px;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    a.button {
+      display: inline-block;
+      background-color: #1a8917;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 6px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .code {
+      font-size: 14px;
+      color: #4a4a4a;
+      background-color: #f1f1f1;
+      padding: 12px;
+      word-break: break-all;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+
+    .footer {
+      font-size: 13px;
+      color: #999;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 16px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      a.button {
+        padding: 12px 20px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Brand Logo -->
+    <div class="logo">
+      <img src="https://www.alsulk.com/assets/logo.jpg" alt="Your Brand Logo" />
+    </div>
+
+    <h1>Confirm Your Email to Get Started</h1>
+
+    <p>Hi {{ user.get_full_name|default:user.username }},</p>
+
+    <p>Thank you for signing up. Click the button below to confirm your email address and complete your subscription.</p>
+
+    <div class="center">
+      <a href="{{ activate_url }}" class="button">Confirm Your Email</a>
+    </div>
+
+    <p>If the button doesn't work, copy and paste this link into your browser:</p>
+    <p class="code">{{ activate_url }}</p>
+
+    <div class="footer">
+      You’re receiving this email because someone signed up using your address.<br />
+      If that wasn't you, feel free to ignore this email.
+    </div>
+  </div>
+</body>
+</html>
+
+
