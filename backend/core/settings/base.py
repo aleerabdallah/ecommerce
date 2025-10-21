@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 
-FRONT_END_URL = "https://alsulk.vercel.app"
+FRONT_END_URL = os.environ.get("FRONTEND_URL")
 FRONT_END_DOMAIN = FRONT_END_URL
 
 ALLOWED_HOSTS = []
@@ -141,6 +141,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 
 CORS_ALLOWED_ORIGINS = [
+    FRONT_END_DOMAIN,
     "https://alsulk.vercel.app",
     "https://www.alsulk.com",
     "https://alsulk.com",
@@ -150,6 +151,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    FRONT_END_DOMAIN,
     "https://alsulk.vercel.app",
     "https://www.alsulk.com",
     "https://alsulk.com",
