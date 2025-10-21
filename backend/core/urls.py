@@ -27,6 +27,8 @@ urlpatterns = [
     path("api/v1/reviews/", include("reviews.urls")),
     # ========================== Cart ==========================
     path("api/v1/cart/", include("cart.urls")),
+    # ========================== Orders ========================
+    path("api/v1/orders/", include("orders.urls")),
     # ========================== Newsletter ===================
     # path("api/v1/newsletter/", include("newsletter.urls")),
     path("api/schema/a/b/do/", SpectacularAPIView.as_view(), name="schema"),
