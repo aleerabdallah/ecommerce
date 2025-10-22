@@ -20,6 +20,8 @@ import "./globals.css";
 
 import React from "react";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import Navbar from "../components/Layout/Navbar";
+import { AuthProvider } from "../context/AuthContext";
 
 export const metadata = {
   title: "Shoply — Modern E-Commerce",
@@ -38,9 +40,12 @@ export default function RootLayout({
         <GoogleOAuthProvider
           clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID as string}
         >
-          <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col min-h-screen">
-            {children}
-          </div>
+          <AuthProvider>
+            <Navbar />
+            <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col min-h-screen">
+              {children}
+            </div>
+          </AuthProvider>
         </GoogleOAuthProvider>
       </body>
     </html>

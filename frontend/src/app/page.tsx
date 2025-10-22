@@ -6,26 +6,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex-1 grid gap-16">
-      <header className="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <h1 className="text-4xl font-bold tracking-tight text-[#00E0B8]">
-          Shoply
-        </h1>
-        <nav className="flex gap-4 text-sm">
-          <Link
-            href="/login"
-            className="px-4 py-2 rounded-md bg-[#00E0B8] text-[#0B0F19] font-medium hover:opacity-90 transition"
-          >
-            Login
-          </Link>
-          <Link
-            href="/signup"
-            className="px-4 py-2 rounded-md border border-[#2A3242] hover:bg-[#141A26]"
-          >
-            Signup
-          </Link>
-        </nav>
-      </header>
-
       <section className="grid lg:grid-cols-2 gap-10 items-center">
         <div className="space-y-6">
           <h2 className="text-5xl font-extrabold leading-tight text-white">
