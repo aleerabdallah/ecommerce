@@ -67,13 +67,13 @@ export default function ProductDetailPage() {
 
     try {
       setReviewsLoading(true);
-      const [reviewsResponse, stats] = await Promise.all([
-        reviewService.getApprovedProductReviews(product.id),
-        reviewService.getReviewStats(product.id),
-      ]);
+      // const [reviewsResponse, stats] = await Promise.all([
+      //   // reviewService.getApprovedProductReviews(product.id),
+      //   reviewService.getReviewStats(product.id),
+      // ]);
 
-      setReviews(reviewsResponse.results);
-      setReviewStats(stats);
+      // setReviews(reviewsResponse.results);
+      // setReviewStats(stats);
     } catch (err: any) {
       console.error("Error loading reviews:", err);
     } finally {
@@ -170,7 +170,7 @@ export default function ProductDetailPage() {
             <div className="relative bg-[#1A1F2E] border border-[#2A3242] rounded-lg overflow-hidden aspect-square">
               {product.images && product.images.length > 0 ? (
                 <>
-                  <Image
+                  <img
                     src={product.images[selectedImage].image}
                     alt={product.name}
                     width={600}
@@ -256,7 +256,7 @@ export default function ProductDetailPage() {
                           : "border-[#2A3242] hover:border-[#00E0B8]"
                       }`}
                     >
-                      <Image
+                      <img
                         src={image.image}
                         alt={`${product.name} ${index + 1}`}
                         width={80}
